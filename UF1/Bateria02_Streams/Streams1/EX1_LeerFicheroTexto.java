@@ -1,4 +1,4 @@
-package Bateria02_Streams;
+package Bateria02_Streams.Streams1;
 
 import java.io.*;
 
