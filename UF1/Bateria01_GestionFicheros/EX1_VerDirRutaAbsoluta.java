@@ -5,7 +5,7 @@ package Bateria01_GestionFicheros;
  */
 
 import java.io.*;
-public class EX1_VerDirRutaAboluta{
+public class EX1_VerDirRutaAbsoluta{
 	public static void main (String[] args) {
 		String dir = "C:\\Users\\Feuer\\Downloads"; // Directorio de descargas (en Windows)
 
