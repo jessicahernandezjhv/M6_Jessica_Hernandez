@@ -1,13 +1,17 @@
 package Bateria02_Streams.Streams1;
 
-/* Ejercicio 2. Modifica el código anterior para que el programa vaya 
- * leyendo caracteres de 20 en 20. */
+/* Ejercicio 3. Modifica el código anterior para que se le puede
+ * pasar el nombre del fichero al programa.*/
 
 import java.io.*;
 
-public class EX2_LeerFicheroTextoPorCaracteres {
+public class EX3_LeerFicheroTexto {
 	public static void main ( String [] args) throws IOException {
-		File fichero = new File ("./././UF1/Bateria02_Streams/Streams1/EX1_LeerFicheroTexto.java");  // declaración fichero
+		System.out.print("Introduce la ruta del fichero a leer: ");
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+		String userInput = reader.readLine();
+		
+		File fichero = new File (userInput);  // declaración fichero
 		FileReader flu = new FileReader (fichero); // creamos flujo de entrada hacia el fichero
 
 		char[] buf = new char[20];
