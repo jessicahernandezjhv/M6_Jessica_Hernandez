@@ -12,10 +12,13 @@ public class EX3_LeerFicheroBinario {
 
 		File fichero = new File ("FicheroDatos.dat");
 		DataInputStream filein = new DataInputStream (new FileInputStream(fichero));
-		
-		for (int i=0; i<5; i++) {
-			System.out.print(filein.readUTF());
-			System.out.println(filein.readInt());
+		try {
+			while (true) {
+				System.out.print(filein.readUTF());
+				System.out.println(filein.readInt());
+			}
+		} catch (EOFException eo) {
+			System.out.println ("Fin de Lectura");
 		}
 		filein.close();
 	}
