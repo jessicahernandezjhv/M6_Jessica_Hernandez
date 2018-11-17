@@ -1,6 +1,6 @@
 package Bateria02_Streams.Streams1;
 
-/* Ejercicio 3. Modifica el código anterior para que se le puede
+/* Ejercicio 3. Modifica el código anterior para que se le pueda
  * pasar el nombre del fichero al programa.*/
 
 import java.io.*;
