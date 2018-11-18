@@ -1,0 +1,8 @@
+Ejercicio 4. Vuelve a ejecutar los problemas anteriores pero en los pasos intermedios
+trata de leer el fichero “FicheroDatos.dat” con algún editor de texto del
+sistema. ¿Qué pasa?
+
+Al intentar abrir un fichero .bat (binario) con un editor de textos, los datos que no
+son UTF, no pueden ser interpretados por el editor. Así pues, en este caso, el editor
+nos muestra los nombres de las personas y una serie de caracteres especiales que representan
+los Integers de la edad de estas personas.
