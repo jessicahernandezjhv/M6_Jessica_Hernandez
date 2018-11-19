@@ -1,8 +1,8 @@
 package Bateria02_Streams.Streams3;
 
 /* Ejercicio 2. Escribe un programa que, utilizando la clase BufferedWriter, escriba 10 filas
-de caracteres en un fichero de texto y después de escribir cada fila salta una
-línea con el método newLine() */
+de caracteres en un fichero de texto y despuï¿½s de escribir cada fila salta una
+lÃ­nea con el mÃ©todo newLine() */
 
 import java.io.*;
 
@@ -28,7 +28,7 @@ public class EX2_EscribirFicheroBufferedWriter {
 				fichero.newLine();
 			}
 			fichero.close();
-			System.out.println("El archivo "+ fileName+extension + " se ha creado con éxito");
+			System.out.println("El archivo "+ fileName+extension + " se ha creado con ï¿½xito");
 		}
 
 		catch (FileNotFoundException fn) {
