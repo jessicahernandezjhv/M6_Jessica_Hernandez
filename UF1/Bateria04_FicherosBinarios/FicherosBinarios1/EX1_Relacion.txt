@@ -1,7 +1,7 @@
-Ejercicio 1. Averigua jer�rquicamente, �cu�l es la relaci�n entre DataInputStream y
+Ejercicio 1. Averigua jerárquicamente, ¿cuál es la relación entre DataInputStream y
 FileInputStream?
 
-Si debemos hacer una clasificaci�n de general a espec�fico el orden ser�a
+Si debemos hacer una clasificación de general a específico el orden sería
 el siguiente: InputStream, FileInputStream, DataInputStream.
  
 Las clases FileInputStream y DataInputStream son clases derivadas (hijas) 
@@ -11,10 +11,29 @@ metodos necesarios para el tratamiento de ficheros binarios.
 La clase FileInputStream estaria por debajo de InputStream, ya que permite
 la apertura de un fichero y su lectura byte a byte.
  
-La clase DataInputStream concretaria un poco m�s la lectura del fichero,
-ya que permite interpretar los datos binarios en tipos b�sicos (Integers,
+La clase DataInputStream concretaria un poco más la lectura del fichero,
+ya que permite interpretar los datos binarios en tipos básicos (Integers,
 Doubles, Strings, Boolean...).
  
 Para realizar una lectura mediante DataInputStream, es necesario primeramente
 acceder al archivo con FileInputStream. En cambio con FileInputStream ya podemos
 realizar directamente una lectura de los datos binarios en bruto. 
+
+----------------------------------------------------------------
+
+RESPUESTA 2
+
+En el nivel más basico estaria la clase InputStream (clase padre). En general los 
+Streams leen bytes en bruto. El resto son clases hijas que heredan de InputStream,
+que permiten leer los datos a un nivel más alto.
+ 
+En este caso FileInputStream es una clase hija que se utiliza para crear una
+secuencia de entrada para leer bytes de un archivo.
+ 
+En cambio, la clase DataInputStream es capaz de leer los bytes pero como enteros,
+float, doubles, etc. (datos de tipo primitivo).
+
+Por lo tanto, el orden jerarquico de las clases sería en primer termino InputStream,
+seguida por FileInputStream y finalmente DataInputStream, ya que la primera permite
+leer bytes en bruto, la siguiente permite leer los bytes de un archivo y la ultima
+permite leer los bytes e interpretarlos como tipos de datos básicos.

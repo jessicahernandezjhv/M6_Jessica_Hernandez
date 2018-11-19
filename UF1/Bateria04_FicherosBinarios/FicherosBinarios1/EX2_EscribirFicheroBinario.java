@@ -1,10 +1,10 @@
 package Bateria04_FicherosBinarios.FicherosBinarios1;
 
-/* Ejercicio 2. Escribe un programa que inserte datos en ìFicherosDatos.datî. Los datos los
-tomar· de dos arrays definidos en el propio programa. Uno contendr· los
-nombres de una serie de personas y el otro sus edades. Se ir· recorriendo
-los arrays e iremos escribiendo en el fichero el nombre (mediante el mÈtodo
-writeUTF(String str) y la edad (writeInt (int v)). NOTA: si queremos aÒadir
+/* Ejercicio 2. Escribe un programa que inserte datos en "FicherosDatos.dat". Los datos los
+tomar√° de dos arrays definidos en el propio programa. Uno contendr√° los
+nombres de una serie de personas y el otro sus edades. Se ir√° recorriendo
+los arrays e iremos escribiendo en el fichero el nombre (mediante el m√©todo
+writeUTF(String str) y la edad (writeInt (int v)). NOTA: si queremos a√±adir
 bytes al final del fichero (FicheroDatos.dat) se puede usar el siguiente
 constructor: FileOutputStream fileout = new FileOutputStream (fichero, true) */
 
@@ -25,7 +25,7 @@ public class EX2_EscribirFicheroBinario {
 				fileout.writeInt(edades[i]);
 			}
 			fileout.close();
-			System.out.println("El archivo se ha creado con Èxito");
+			System.out.println("El archivo se ha creado con ÔøΩxito");
 		}
 		
 		catch (IOException io) {

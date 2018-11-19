@@ -1,21 +1,30 @@
 package Bateria04_FicherosBinarios.FicherosBinarios2;
 
-/* Ejercicio 2. DiseÒa una clase que llamar·s GuardarYRecuperarEstado que disponga de
-dos mÈtodos: guardarEstado que permitir· guardar en un archivo el estado
-de la partida y otro, recuperarEstado, que permitir· recuperar el estado de
+/* Ejercicio 2. Dise√±a una clase que llamar√°s GuardarYRecuperarEstado que disponga de
+dos m√©todos: guardarEstado que permitir√° guardar en un archivo el estado
+de la partida y otro, recuperarEstado, que permitir√° recuperar el estado de
 una partida desde archivo. */
 
 import java.io.*;
 
-// TODO: Solucionar crear objeto de tipo EstadoPartida
-
 public class EX2_GuardarYRecuperarEstado {
-	public static void main (String[] args) throws IOException {
-		File fichero = new File ("EstadoPartida.dat");
+	public static File fichero = new File ("EstadoPartida.dat");
+	
+	public static void guardarEstado(EX1_EstadoPartida partida) throws IOException {
 		FileOutputStream fileout = new FileOutputStream (fichero);
-		ObjectOutputStream dataOS = new ObjectOutputStream (fileout);
-		EX1_EstadoPartida partida1 = new EX1_EstadoPartida ({0,1,1}, 1);
-		dataOS.writeObject (partida1);
-		dataOS.close();
+		ObjectOutputStream dataOut = new ObjectOutputStream (fileout);
+		
+		dataOut.writeObject (partida);
+		dataOut.close();
+	}
+	
+	public static EX1_EstadoPartida recuperarEstado() throws IOException, ClassNotFoundException {
+		FileInputStream filein = new FileInputStream (fichero);
+		ObjectInputStream dataIn = new ObjectInputStream (filein);
+		
+		EX1_EstadoPartida partida = (EX1_EstadoPartida) dataIn.readObject();
+		//dataIn.readObject();
+		dataIn.close();
+		return partida;
 	}
 }
