@@ -14,7 +14,7 @@ public class EX4_ModificacionFicheroAleatorio {
 	public static void main(String[] args) throws IOException {
 		int idEmpleado = Integer.parseInt(args[0]);
 		Double salario = Double.parseDouble(args[1]);
-		
+		leerFicheroAleatorio();
 		comprobarId(idEmpleado, salario);
 		leerFicheroAleatorio();
 	}
@@ -46,7 +46,7 @@ public class EX4_ModificacionFicheroAleatorio {
 				double nuevoSalario = salario + inputSalario;
 
 				if (id > 0)
-					escribirFicheroAleatorio(posicion, inputId, apellidos, dep, nuevoSalario);
+					modificarSalarioEmpleado(posicion, inputId, apellidos, dep, nuevoSalario);
 				break;
 			} else {
 				posicion += 36;
@@ -60,7 +60,7 @@ public class EX4_ModificacionFicheroAleatorio {
 		file.close();
 	}
 	
-	public static void escribirFicheroAleatorio(int writePosicion, int writeId, String oldApellido, int oldDep, Double writeSalario) throws IOException {
+	public static void modificarSalarioEmpleado(int writePosicion, int writeId, String oldApellido, int oldDep, Double writeSalario) throws IOException {
 		File fichero = new File ("AleatorioEmpleado.dat");
 		RandomAccessFile file = new RandomAccessFile (fichero , "rw");
 		
@@ -89,7 +89,7 @@ public class EX4_ModificacionFicheroAleatorio {
 		Double salario;
 		char apellido[]= new char[10], aux;
 		posicion = 0;
-
+		
 		for ( ; ; ){
 			file.seek (posicion); // Nos posicionamos en posicion
 			id = file.readInt(); // Obtengo identificar de Empleado
@@ -108,7 +108,9 @@ public class EX4_ModificacionFicheroAleatorio {
 			posicion = posicion + 36;
 
 			if (file.getFilePointer() ==file.length()) break; // Si he recorrido todo el fichero, salgo del for
-		}                  
+		}
+		
+		System.out.println("");
 
 		file.close();
 	}
