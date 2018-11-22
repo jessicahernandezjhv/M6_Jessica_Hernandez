@@ -5,8 +5,6 @@ package Bateria05_FicherosAleatorios;
 
 import java.io.*;
 
-import Bateria04_FicherosBinarios.FicherosBinarios2.EX1_EstadoPartida;
-
 public class EX1_EscribirLeerFicheroAleatorio {
 	public static void main(String[] args) throws IOException {
 		escribirFicheroAleatorio();
