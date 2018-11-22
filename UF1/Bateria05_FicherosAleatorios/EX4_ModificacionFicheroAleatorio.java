@@ -110,7 +110,7 @@ public class EX4_ModificacionFicheroAleatorio {
 			if (file.getFilePointer() ==file.length()) break; // Si he recorrido todo el fichero, salgo del for
 		}
 		
-		System.out.println("");
+		System.out.println("\n");
 
 		file.close();
 	}
