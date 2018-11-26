@@ -1,4 +1,4 @@
-package Bateria04_FicherosBinarios.FicherosBinarios2;
+package Bateria05_FicherosBinarios.FicherosBinarios2;
 
 /* Ejercicio 2. Diseña una clase que llamarás GuardarYRecuperarEstado que disponga de
 dos métodos: guardarEstado que permitirá guardar en un archivo el estado

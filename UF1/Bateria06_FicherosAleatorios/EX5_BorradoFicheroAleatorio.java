@@ -1,4 +1,4 @@
-package Bateria05_FicherosAleatorios;
+package Bateria06_FicherosAleatorios;
 
 /* Crea un programa Java que al ejecutarlo desde la línea de
  * comandos reciba un identificador de empleado y lo borre. 

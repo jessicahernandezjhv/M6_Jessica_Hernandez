@@ -1,4 +1,4 @@
-package Bateria05_FicherosAleatorios;
+package Bateria06_FicherosAleatorios;
 
 /* Ejercicio 1. Implementa los ejemplos anteriores y comprueba su correcto 
  * funcionamiento.*/
