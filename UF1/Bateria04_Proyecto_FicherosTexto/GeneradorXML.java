@@ -27,7 +27,7 @@ public class GeneradorXML {
 		Boolean csvIsDirectory = isDirectory(fileCSV);
 		
 		// Generar archivo log en la misma ruta
-		logFile(logFileDirectory+"\\logFile.log", "Directorio CSV registrado.");
+		logFile(logFileDirectory+"\\logFile.slog", "Directorio CSV registrado.");
 
 		// Directorio del archivo de etiquetas
 		System.out.println("Introduce la ruta del archivo de etiquetas (sin extension): ");
@@ -35,11 +35,7 @@ public class GeneradorXML {
 		File tagFile = new File(tagFileDirectory+textExtension);
 		
 		logFile(logFileDirectory+"\\logFile.log", "Directorio de etiquetas registrado.");
-		String [] labels = getLabels(tagFile);
-		
-		for (int i=0; i < labels.length; i++) {
-			System.out.println(labels[i]);
-		}
+		String [] tags = getLabels(tagFile);
 		
 
 		// Directorio archivo de salida
@@ -58,7 +54,6 @@ public class GeneradorXML {
 		}
 		
 		logFile(logFileDirectory+"\\logFile.log", "Estableciendo directorio de salida...");
-
 	}
 
 
