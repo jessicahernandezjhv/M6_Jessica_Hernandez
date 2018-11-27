@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<albums>
+    <album> 
+        <autor>El Puma</autor>
+        <titulo>Pavo Real</titulo> 
+        <formato>MP3</formato> 
+    </album>
+    <album> 
+        <autor>Marisol</autor>
+        <titulo>Tombola</titulo> 
+        <formato>AAC</formato> 
+    </album>
+    <album> 
+        <autor>Joselito</autor>
+        <titulo>Campanera</titulo> 
+        <formato>WAV</formato> 
+    </album>
+    <album> 
+        <autor>Eduard Anatolyevich Khil</autor>
+        <titulo>Trololo</titulo> 
+        <formato>MIDI</formato> 
+    </album>
+    <album> 
+        <autor>El Koala</autor>
+        <titulo>Opa! Yo voy a haceh un corra</titulo> 
+        <formato>MP3</formato> 
+    </album>
+    <album> 
+        <autor>Jennifer Lopez</autor>
+        <titulo>On the Floor (feat. Pitbull)</titulo> 
+        <formato>MP3</formato> 
+    </album>
+    <album> 
+        <autor>Parchis</autor>
+        <titulo>Hasta luego cocodrilo</titulo> 
+        <formato>MP3</formato> 
+    </album>
+    <album> 
+        <autor>Chiquilicuatre</autor>
+        <titulo>Baila el Chiki Chiki</titulo> 
+        <formato>MP3</formato> 
+    </album>
+    <album> 
+        <autor>Nicky Minaj</autor>
+        <titulo>Anaconda</titulo> 
+        <formato>MP3</formato> 
+    </album>
+</albums>

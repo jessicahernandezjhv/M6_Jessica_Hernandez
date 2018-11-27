@@ -38,7 +38,7 @@ public class EX2_CrearXml {
 			}
 			
 			Source source = new DOMSource(document);
-			Result result = new StreamResult(new File ("Emple.xml"));
+			Result result = new StreamResult(new File ("Empleados.xml"));
 			Transformer transformer = TransformerFactory.newInstance().newTransformer();
 			transformer.transform(source, result);
 			
