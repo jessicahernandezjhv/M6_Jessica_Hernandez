@@ -1,4 +1,4 @@
-package Bateria04_Proyecto_FicherosTexto;
+package Bateria03_Proyecto_FicherosTexto;
 
 import java.io.*;
 import java.nio.file.Files;

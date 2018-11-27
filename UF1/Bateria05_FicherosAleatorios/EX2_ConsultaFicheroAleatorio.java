@@ -1,4 +1,4 @@
-package Bateria06_FicherosAleatorios;
+package Bateria05_FicherosAleatorios;
 
 /* Ejercicio 2. CONSULTA. Crea un programa Java que consulte los datos de un 
  * empleado del fichero aleatorio. El programa se ejecutará desde la línea de

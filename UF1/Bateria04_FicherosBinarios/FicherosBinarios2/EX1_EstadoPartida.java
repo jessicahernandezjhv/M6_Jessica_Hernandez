@@ -1,4 +1,4 @@
-package Bateria05_FicherosBinarios.FicherosBinarios2;
+package Bateria04_FicherosBinarios.FicherosBinarios2;
 
 /* Ejercicio 1. Diseña una clase que llamarás EstadoPartida para gestionar el estado de
 una partida de 3 en raya. Debe incluir: posición de las piezas (será una matriz

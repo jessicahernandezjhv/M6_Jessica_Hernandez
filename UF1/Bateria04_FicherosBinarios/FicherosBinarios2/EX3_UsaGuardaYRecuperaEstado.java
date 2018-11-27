@@ -1,4 +1,4 @@
-package Bateria05_FicherosBinarios.FicherosBinarios2;
+package Bateria04_FicherosBinarios.FicherosBinarios2;
 
 /* Ejercicio 3. Crea un programa en java que genere un objeto EstadoPartida, modifique la 
 posición de algunas fichas del tablero, guarde en un archivo el estado de la 

@@ -1,4 +1,4 @@
-package Bateria05_FicherosBinarios.FicherosBinarios1;
+package Bateria04_FicherosBinarios.FicherosBinarios1;
 
 /* Ejercicio 3. Ahora escribe un programa que permita visualizar los datos grabados
 anteriormente en el fichero FicheroDatos.dat. Se deben obtener en el mismo

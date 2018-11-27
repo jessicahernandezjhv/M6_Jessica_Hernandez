@@ -1,4 +1,4 @@
-package Bateria05_FicherosBinarios.FicherosBinarios1;
+package Bateria04_FicherosBinarios.FicherosBinarios1;
 
 /* Ejercicio 2. Escribe un programa que inserte datos en "FicherosDatos.dat". Los datos los
 tomará de dos arrays definidos en el propio programa. Uno contendrá los
