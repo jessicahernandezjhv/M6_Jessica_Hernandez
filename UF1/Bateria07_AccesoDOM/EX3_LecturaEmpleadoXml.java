@@ -6,7 +6,6 @@ import java.io.File;
 import javax.xml.parsers.*;
 import org.w3c.dom.*;
 
-
 public class EX3_LecturaEmpleadoXml {
 	public static void main (String[] args) {
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();

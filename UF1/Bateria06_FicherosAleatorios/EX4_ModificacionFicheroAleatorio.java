@@ -10,7 +10,6 @@ package Bateria06_FicherosAleatorios;
 import java.io.*;
 
 public class EX4_ModificacionFicheroAleatorio {
-
 	public static void main(String[] args) throws IOException {
 		try {
 			int idEmpleado = Integer.parseInt(args[0]);

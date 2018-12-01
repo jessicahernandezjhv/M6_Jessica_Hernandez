@@ -55,8 +55,13 @@ public class EX3_InsercionFicheroAleatorio {
 			} else {
 				posicion += 36;
 				if (posicion == file.length()) {
-					escribirFicheroAleatorio(inputId, inputApellido, inputDpt, inputSalario);
-					break; // Si he recorrido todo el fichero, salgo del for
+					if (id > 0) {
+						escribirFicheroAleatorio(inputId, inputApellido, inputDpt, inputSalario);
+						break; // Si he recorrido todo el fichero, salgo del for
+					} else {
+						System.out.println("El ID introduccido no es valido.");
+						break;
+					}
 				}
 			}
 		}

@@ -8,7 +8,6 @@ empleados. */
 import java.io.*;
 
 public class EX2_CrearTxtEmpleados {
-		
 	public static void main ( String [] args) throws IOException {
 		File fichero = new File ("Empleados.txt");  // declaración fichero
 		String [] empleado = {"1:Fernandez:10:1000.45",

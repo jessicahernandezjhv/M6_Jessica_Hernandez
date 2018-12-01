@@ -5,7 +5,6 @@ de utilizar un fichero de acceso aleatorio (como era el caso de
 AleatorioEmpleado.dat) vas a utilizar un fichero de texto con los datos de los 
 empleados. */
 
-
 import org.w3c.dom.*;
 import javax.xml.parsers.*;
 import javax.xml.transform.*;  

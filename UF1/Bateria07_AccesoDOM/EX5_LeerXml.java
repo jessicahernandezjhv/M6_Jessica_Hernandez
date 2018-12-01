@@ -1,13 +1,11 @@
 package Bateria07_AccesoDOM;
 
-
 /* Ejercicio 5. Crea un programa Java que lea el documento anterior y muestre toda la 
 información que contenga.*/
 
 import java.io.File;
 import javax.xml.parsers.*;
 import org.w3c.dom.*;
-
 
 public class EX5_LeerXml {
 	public static void main (String[] args) {
