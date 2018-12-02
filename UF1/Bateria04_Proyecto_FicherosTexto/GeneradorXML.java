@@ -6,8 +6,6 @@ import java.util.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
-import javafx.scene.shape.Path;
-
 public class GeneradorXML {
 	
 	final static String csvExtension = ".csv";
