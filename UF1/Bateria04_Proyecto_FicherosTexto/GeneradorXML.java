@@ -15,19 +15,21 @@ public class GeneradorXML {
 	final static String xmlExtension = ".xml";
 	public static String logFileDirectory = "";
 	public static int fileCount = 0;
+	public static String mainDirectory = "";
+
 
 	public static void main(String[] args) throws IOException {
 		// Directorio o archivo CSV
-		System.out.println("Introduce el directorio de tu archivo/s CSV (sin extension): ");
+		System.out.println("Introduce el directorio de tu archivo/s CSV: ");
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		String csvDirectory = reader.readLine();
 	
 		// Comprobar si es una ruta o un fichero
 		File fileCSV = new File(csvDirectory);
-		Boolean csvIsDirectory = isDirectory(fileCSV);
+		Boolean csvIsDirectory = checkIfDirectory(fileCSV);
 		
 		// Generar archivo log en la misma ruta
-		logFile(logFileDirectory+"\\logFile.slog", "Directorio CSV registrado.");
+		logFile(logFileDirectory+"\\logFile.log", "Directorio CSV registrado.");
 
 		// Directorio del archivo de etiquetas
 		System.out.println("Introduce la ruta del archivo de etiquetas (sin extension): ");
@@ -35,22 +37,25 @@ public class GeneradorXML {
 		File tagFile = new File(tagFileDirectory+textExtension);
 		
 		logFile(logFileDirectory+"\\logFile.log", "Directorio de etiquetas registrado.");
-		String [] tags = getLabels(tagFile);
-		
 
 		// Directorio archivo de salida
 		System.out.println("Nombre del fichero/s de salida (sin extension): ");
 		String outputFileName = reader.readLine();
 		
-		
+		//TODO : Hacer que cambie el archivo CSV
 		//Conversion en funcion de si es directorio o fichero
 		if (csvIsDirectory == true) {
+			findCsvFiles(fileCSV, csvExtension);
+			File csvFile = new File (mainDirectory);
 			for (int i=0; i < fileCount; i++) {
-				File outputDirectory = new File(csvDirectory+"\\"+outputFileName+i+xmlExtension);
+				File outputDirectory = new File(csvDirectory+"\\"+outputFileName+(i+1)+xmlExtension);
+				xmlConverter(tagFile, csvFile, outputDirectory);	
 			}
+			
 		} else {
 			String directory = fileCSV.getParent();
 			File outputDirectory = new File(directory+"\\"+outputFileName+xmlExtension);
+			xmlConverter(tagFile, fileCSV,outputDirectory);
 		}
 		
 		logFile(logFileDirectory+"\\logFile.log", "Estableciendo directorio de salida...");
@@ -59,22 +64,21 @@ public class GeneradorXML {
 
 	public static void findCsvFiles(File carpeta, String extension) {
 		for (File ficheroEntrada : carpeta.listFiles()) {
-			if (ficheroEntrada.isDirectory()) {
-				findCsvFiles(ficheroEntrada, extension);
-			} else {
+//			if (ficheroEntrada.isDirectory()) {
+//				findCsvFiles(ficheroEntrada, extension);
+//			} else {
 				String fileName = ficheroEntrada.getName();
 
 				if (fileName.endsWith(extension)) {
 					System.out.println(fileName);
 					fileCount += 1;
-					String completeDirectory = carpeta+fileName; 
+					mainDirectory = carpeta+"\\"+fileName;
 				}	           
 			}
-		}
 	}
 	
 	
-	public static boolean isDirectory(File ruta) {
+	public static boolean checkIfDirectory(File ruta) {
 		String rutaSalida = "";
 		if (ruta.isDirectory()) {
 			logFileDirectory = ruta.toString();
@@ -108,16 +112,71 @@ public class GeneradorXML {
 	}
 	
 	
-    private static String[] getLabels(File tag) throws IOException {
-    	// Get all the labels from the file converting to an array of strings
-    	
-		BufferedReader br = new BufferedReader(new FileReader(tag));
-		
+    private static String[] getLabels(BufferedReader tag) throws IOException {
+    	// Get all the labels from the file converting to an array of strings		
     	String label = null;
     	String labels = "";
-    	while ((label = br.readLine()) != null) {
+    	while ((label = tag.readLine()) != null) {
     		labels += label + ",";
     	}
 		return labels.split(",");
+	}
+    
+    private static void xmlConverter(File tagFile, File dataFile, File outputFile) throws IOException {
+		System.out.println("Starting conversion... Please wait");
+    	logFile(logFileDirectory+"\\logFile.log", "Starting Conversion");
+		
+		BufferedReader labelsReader = new BufferedReader(new FileReader(tagFile));
+		BufferedReader dataReader = new BufferedReader(new FileReader(dataFile));
+		BufferedWriter outputWriter = new BufferedWriter(new FileWriter(outputFile));
+		
+		// Write the root label
+		outputWriter.write(String.format("<%s>", "arrel") + "\n");
+		
+		String[] labels = getLabels(labelsReader);
+		String data_line = null;
+		int nr_line = 0;
+		String text_line = ""; 
+		String element = "";
+		
+		while ((data_line = dataReader.readLine()) != null) {
+			// Read line per line all the data and put it in a array
+			String[] data = data_line.split(",\\s?");
+			
+			// Compare length between all labels and row data, and gets the bigger
+			int max = data.length;
+			if (labels.length > max) {
+				max = labels.length;
+			}
+			
+			
+			String elements = "";
+			for (int i = 0; i < max; i++) {
+				String curdata = "";
+				try {
+					curdata = data[i];
+				} catch(Exception e) {}
+				curdata = data[i];
+				
+				String curlabel = "altre";
+				try {
+					curlabel = labels[i];
+				} catch(Exception e) {}
+				 
+				elements += "\t" + "\t" + String.format("<%s>", curlabel);
+				elements += curdata + String.format("</%s>\n", curlabel);
+			}
+			
+			element = "elem nr=\"" + ++nr_line + "\"";
+			text_line = "\t" + String.format("<%s>", element) + "\n";
+			text_line += elements + "\t" + (String.format("</%s>", "elem") + "\n");
+			outputWriter.write(text_line);
+		}
+		
+		// End the root label
+		outputWriter.write(String.format("</%s>", "arrel"));
+		
+		logFile(logFileDirectory+"\\logFile.log", "Confersion finished correctly");
+		System.out.println("Conversion Finished!!\n");
 	}
 }
