@@ -37,7 +37,7 @@ public class EX4_ModificacionFicheroAleatorio {
 			file.seek (posicion); // Nos posicionamos en posicion
 			id = file.readInt(); // Obtengo identificar de Empleado
 
-			if (id == inputId) {
+			if (inputId > 0 && id == inputId) {
 				for ( int i = 0; i < apellido.length; i++) {
 					aux = file.readChar(); // Voy leyendo carácter a carácter el apellido y lo guardo
 					apellido[i]=aux; // en el array apellido
@@ -46,11 +46,9 @@ public class EX4_ModificacionFicheroAleatorio {
 				String apellidos = new String (apellido);
 				dep = file.readInt(); //Lectura de departamento y salario
 				salario = file.readDouble();
-
 				double nuevoSalario = salario + inputSalario;
 
-				if (id > 0)
-					modificarSalarioEmpleado(posicion, inputId, apellidos, dep, nuevoSalario);
+				modificarSalarioEmpleado(posicion, inputId, apellidos, dep, nuevoSalario);
 				break;
 			} else {
 				posicion += 36;
@@ -74,7 +72,6 @@ public class EX4_ModificacionFicheroAleatorio {
 		buffer.setLength(10); // Fijo en 10 caracteres la longitud del apellido
 		int dep = oldDep;
 		Double salario = writeSalario;
-		//int posicion = (int) file.length();
 
 		file.seek (writePosicion); // Nos posicionamos en posicion
 		file.writeInt (id);

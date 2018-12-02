@@ -49,22 +49,21 @@ public class EX3_InsercionFicheroAleatorio {
 				dep = file.readInt(); //Lectura de departamento y salario
 				salario = file.readDouble();
 
-				if (id > 0)
-					System.out.printf("El ID ya existe. No se puede introducir otro empleado con este ID.\n\n");
+				System.out.printf("El ID ya existe. No se puede introducir otro empleado con este ID.\n\n");
 				break;
+				
 			} else {
 				posicion += 36;
 				if (posicion == file.length()) {
-					if (id > 0) {
-						escribirFicheroAleatorio(inputId, inputApellido, inputDpt, inputSalario);
+						if (inputId > 0) {
+							escribirFicheroAleatorio(inputId, inputApellido, inputDpt, inputSalario);
+						} else {
+							System.out.println("El ID no es valido. \n\n");
+						}
 						break; // Si he recorrido todo el fichero, salgo del for
-					} else {
-						System.out.println("El ID introduccido no es valido.");
-						break;
 					}
 				}
 			}
-		}
 
 		file.close();
 	}

@@ -36,20 +36,16 @@ public class EX5_BorradoFicheroAleatorio {
 			file.seek (posicion); // Nos posicionamos en posicion
 			id = file.readInt(); // Obtengo identificar de Empleado
 
-			if (id == inputId) {
+			if (inputId > 0 && id == inputId) {
 				for ( int i = 0; i < apellido.length; i++) {
 					aux = file.readChar(); // Voy leyendo carácter a carácter el apellido y lo guardo
 					apellido[i]=aux; // en el array apellido
 				}
-
-				int apellidos = id;
-				dep = 0;
+				
+				String apellidos = new String (apellido);
+				dep = file.readInt(); //Lectura de departamento y salario
 				salario = file.readDouble();
-				double nuevoSalario = 0;
-
-				if (id > 0)
-					inputId = -1;
-					modificarSalarioEmpleado(posicion, inputId, apellidos, dep, nuevoSalario);
+				modificarSalarioEmpleado(posicion, inputId, apellidos, dep, salario);
 				break;
 			} else {
 				posicion += 36;
@@ -63,24 +59,24 @@ public class EX5_BorradoFicheroAleatorio {
 		file.close();
 	}
 
-	public static void modificarSalarioEmpleado(int writePosicion, int writeId, int oldApellido, int oldDep, Double writeSalario) throws IOException {
+	public static void modificarSalarioEmpleado(int writePosicion, int writeId, String oldApellido, int oldDep, Double writeSalario) throws IOException {
 		File fichero = new File ("AleatorioEmpleado.dat");
 		RandomAccessFile file = new RandomAccessFile (fichero , "rw");
 
-		int id = writeId;
-		//StringBuffer buffer = null; //Buffer para almacenar apellido
-		///buffer = new StringBuffer (oldApellido);
-		//buffer.setLength(10); // Fijo en 10 caracteres la longitud del apellido
-		int apellidos = oldApellido;
-		int dep = oldDep;
-		Double salario = writeSalario;
-		//int posicion = (int) file.length();
+		oldApellido = Integer.toString(writeId);
+		writeId = -1;
+		
+		StringBuffer buffer = null; //Buffer para almacenar apellido
+		buffer = new StringBuffer (oldApellido);
+		buffer.setLength(10); // Fijo en 10 caracteres la longitud del apellido
+		oldDep = 0;
+		writeSalario = 0.0;
 
 		file.seek (writePosicion); // Nos posicionamos en posicion
-		file.writeInt (id);
-		file.writeInt (apellidos);
-		file.writeInt(dep);
-		file.writeDouble (salario);
+		file.writeInt (writeId);
+		file.writeChars (buffer.toString());
+		file.writeInt(oldDep);
+		file.writeDouble (writeSalario);
 
 		file.close();  // No olvidarse de cerrar el fichero
 	}

@@ -40,9 +40,14 @@ public class EX2_ConsultaFicheroAleatorio {
 				dep = file.readInt(); //Lectura de departamento y salario
 				salario = file.readDouble();
 
-				if (id > 0)
+				if (id > 0) {
 					System.out.printf("ID: %s, Apellido: %s, Departamento: %d, Salario: %.2f %n", id, apellidos.trim(), dep, salario);
-				break;
+					break;
+				} else {
+					System.out.printf("El identificador no es valido");
+					break;
+				}
+	
 			} else {
 				posicion += 36;
 				if (posicion == file.length()) {
