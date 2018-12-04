@@ -24,7 +24,7 @@ public class EX4_ContarAutorXML {
 		XMLReader procesadorXML = XMLReaderFactory.createXMLReader();
 		GestorContadorAutor gestor = new GestorContadorAutor(autor);
 		procesadorXML.setContentHandler(gestor);
-		InputSource fileXML = new InputSource ("discoteca2.xml");
+		InputSource fileXML = new InputSource ("discoteca.xml");
 		procesadorXML.parse(fileXML);
 	}
 }

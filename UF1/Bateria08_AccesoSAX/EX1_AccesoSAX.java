@@ -20,7 +20,7 @@ public class EX1_AccesoSAX {
 		procesadorXML.setContentHandler(gestor);
 		/* Por último, se define el fichero que se va leer mediante InputSource
  		y se procesa el documento XML mediante el método parse() de XMLReader */
-		InputSource fileXML = new InputSource ("discoteca2.xml");
+		InputSource fileXML = new InputSource ("discoteca.xml");
 		procesadorXML.parse(fileXML);
 	}
 }

@@ -18,7 +18,7 @@ public class EX3_ContarDiscos {
 		XMLReader procesadorXML = XMLReaderFactory.createXMLReader();
 		NuevoGestor gestor = new NuevoGestor();
 		procesadorXML.setContentHandler(gestor);
-		InputSource fileXML = new InputSource ("discoteca2.xml");
+		InputSource fileXML = new InputSource ("discoteca.xml");
 		procesadorXML.parse(fileXML);
 	}
 }
