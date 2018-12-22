@@ -111,7 +111,7 @@ public class GeneradorXML {
 	
 	
     private static String[] getLabels(BufferedReader tag) throws IOException {
-    	// Get all the labels from the file converting to an array of strings		
+    	// Obtenemos todas las estiquetas del archivo que se ha introducido
     	String label = null;
     	String labels = "";
     	while ((label = tag.readLine()) != null) {
@@ -128,7 +128,7 @@ public class GeneradorXML {
 		BufferedReader dataReader = new BufferedReader(new FileReader(dataFile));
 		BufferedWriter outputWriter = new BufferedWriter(new FileWriter(outputFile));
 		
-		// Write the root label
+		// Escribe la etiqueta raiz
 		outputWriter.write(String.format("<%s>", "arrel") + "\n");
 		
 		String[] labels = getLabels(labelsReader);
@@ -138,10 +138,9 @@ public class GeneradorXML {
 		String element = "";
 		
 		while ((data_line = dataReader.readLine()) != null) {
-			// Read line per line all the data and put it in a array
+			// Recoge la informacion del csv
 			String[] data = data_line.split(",\\s?");
 			
-			// Compare length between all labels and row data, and gets the bigger
 			int max = data.length;
 			if (labels.length > max) {
 				max = labels.length;
@@ -171,7 +170,7 @@ public class GeneradorXML {
 			outputWriter.write(text_line);
 		}
 		
-		// End the root label
+		// Escribimos la etiqueta raiz de cierre
 		outputWriter.write(String.format("</%s>", "arrel"));
 		
 		logFile(logFileDirectory+"\\logFile.log", "Confersion finished correctly");

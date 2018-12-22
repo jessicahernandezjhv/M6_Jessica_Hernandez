@@ -13,7 +13,7 @@ public class EX5_LeerXml {
 		
 		try {
 			DocumentBuilder builder = factory.newDocumentBuilder();
-			Document document = builder.parse(new File ("EX5_albums.xml"));
+			Document document = builder.parse(new File ("EX4_albums.xml"));
 			System.out.printf ("Elemento raíz : %s %n", document.getDocumentElement().getNodeName());
 			NodeList albums = document.getElementsByTagName("album");
 			System.out.printf ("Nodos album a recorrer: %d %n", albums.getLength());

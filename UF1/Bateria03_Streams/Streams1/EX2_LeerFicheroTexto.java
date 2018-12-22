@@ -7,7 +7,7 @@ import java.io.*;
 
 public class EX2_LeerFicheroTexto {
 	public static void main ( String [] args) throws IOException {
-		File fichero = new File ("./././UF1/Bateria02_Streams/Streams1/EX1_LeerFicheroTexto.java");  // declaración fichero
+		File fichero = new File ("./././/UF1/Bateria03_Streams/Streams1/EX1_LeerFicheroTexto.java");  // declaración fichero
 		FileReader flu = new FileReader (fichero); // creamos flujo de entrada hacia el fichero
 
 		char[] buf = new char[20];
