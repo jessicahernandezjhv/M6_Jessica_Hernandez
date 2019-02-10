@@ -1,3 +1,17 @@
+package Bateria05_BDOO;
+
+/* EJERCICIO 1.
+ * 1. Crea la clase Paises con dos atributos y sus getter y 
+ * setter. Los atributos son: private int id; private String nombrepais;
+ * 2. Añade también el método toString() para que devuelva 
+ * el nombre del país: public String toString() {return nombrepais;}
+ * 3. Crea la clase Jugadores (como el ejemplo anterior) y 
+ * añade el siguiente atributo con sus getter y setter: private Paises pais;
+ * 4. Crea una clase Java (con el método main()) que cree
+ * una base de datos de nombre EQUIPOS.DB e inserte países y los jugadores de esos países.
+ * 5. Añade otra clase Java para visualizar los países y
+ * los jugadores que hay en la base de datos. */
+
 import org.neodatis.odb.ODB;
 import org.neodatis.odb.ODBFactory;
 import org.neodatis.odb.Objects;

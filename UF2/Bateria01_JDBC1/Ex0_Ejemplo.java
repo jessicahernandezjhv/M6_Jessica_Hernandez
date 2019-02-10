@@ -1,4 +1,4 @@
-package Bateria1_JDBC.JDBC1;
+package Bateria01_JDBC1;
 
 import java.sql.*;
 public class Ex0_Ejemplo {

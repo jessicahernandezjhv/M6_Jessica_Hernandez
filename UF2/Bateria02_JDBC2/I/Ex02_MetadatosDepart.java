@@ -1,4 +1,4 @@
-package Bateria1_JDBC.JDBC2;
+package Bateria02_JDBC2.I;
 import java.sql.*;
 
 /* EJERCICIO 2. Genera un programa en Java que muestre el nombre, el tipo, el tamaño y si 
