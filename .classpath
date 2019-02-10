@@ -2,7 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="UF1"/>
 	<classpathentry excluding="BDOO/" kind="src" path="UF2"/>
-	<classpathentry kind="src" path="UF2/BDOO"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
 		<attributes>
 			<attribute name="module" value="true"/>
