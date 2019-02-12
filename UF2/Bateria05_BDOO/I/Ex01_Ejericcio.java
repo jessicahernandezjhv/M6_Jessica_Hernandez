@@ -1,4 +1,4 @@
-package Bateria05_BDOO;
+package Bateria05_BDOO.I;
 
 /* EJERCICIO 1.
  * 1. Crea la clase Paises con dos atributos y sus getter y 
@@ -67,7 +67,7 @@ import org.neodatis.odb.Objects;
 	
 	
 	
-	public class EX01_Ejericcio {
+	public class Ex01_Ejericcio {
 
 	public static void main(String[] args) {
 		Paises p1 = new Paises(1,"España");
