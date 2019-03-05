@@ -32,6 +32,7 @@ public class Ex04_Columnas {
 
 	      conexion.close();
 	    }
+	    
 	    catch (ClassNotFoundException cn) {cn.printStackTrace();}
 	    catch (SQLException e) {e.printStackTrace();}
 	  }

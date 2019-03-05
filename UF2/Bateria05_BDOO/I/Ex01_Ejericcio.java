@@ -16,101 +16,43 @@ import org.neodatis.odb.ODB;
 import org.neodatis.odb.ODBFactory;
 import org.neodatis.odb.Objects;
 
-	class Paises {
-		private int id;
-		private String nombrepais;
-		
-		public Paises(int id, String nombrepais) {
-			super();
-			this.id = id;
-			this.nombrepais = nombrepais;
-		}
-
-		public int getId() {
-			return id;
-		}
-
-		public void setId(int id) {
-			this.id = id;
-		}
-
-		public String getNombrepais() {
-			return nombrepais;
-		}
-
-		public void setNombrepais(String nombrepais) {
-			this.nombrepais = nombrepais;
-		}
-
-		@Override
-		public String toString() {
-			return nombrepais;
-		}
-	}
-	
-	class Jugadores {
-		private Paises pais;
-
-		public Jugadores(Paises pais) {
-			super();
-			this.pais = pais;
-		}
-
-		public Paises getPais() {
-			return pais;
-		}
-
-		public void setPais(Paises pais) {
-			this.pais = pais;
-		}
-	}
-	
-	
-	
-	public class Ex01_Ejericcio {
-
+public class Ex01_Ejericcio {
 	public static void main(String[] args) {
-		Paises p1 = new Paises(1,"España");
-		Paises p2 = new Paises(2,"Francia");
-		Paises p3 = new Paises(3,"Italia");
-		Paises p4 = new Paises(4,"Portugal");
+		Pais p1 = new Pais(1,"España");
+		Pais p2 = new Pais(2,"Francia");
+		Pais p3 = new Pais(3,"Italia");
+		Pais p4 = new Pais(4,"Portugal");
+		Jugador j1 = new Jugador("Pepito Grillo", "Charranca", "Salamanca", 18, p1);
+		Jugador j2 = new Jugador("Waldo Geraldo", "Parchis", "Marsella", 25, p2);
+		Jugador j3 = new Jugador("Pepper Pots", "Pica-Paret", "Genova", 21, p3);
+		Jugador j4 = new Jugador("Steve Stramge", "Salto a pata coja", "Oporto", 27, p4);
 
-		Jugadores j1 = new Jugadores(p1);
-		Jugadores j2 = new Jugadores(p2);
-		Jugadores j3 = new Jugadores(p3);
-		Jugadores j4 = new Jugadores(p4);
-		
-		ODB odb = ODBFactory.open("EQUPOS.DB");     // Abrir 
+		ODB odb = ODBFactory.open("EQUPOS.DB");
 		odb.store(p1);
 		odb.store(p2);
 		odb.store(p3);
 		odb.store(p4);
-		odb.store(j1);                                    // Almacenamos 
+		odb.store(j1);      
 		odb.store(j2);
 		odb.store(j3);
 		odb.store(j4);
-		
-		Objects<Paises> objectsPaises = odb.getObjects(Paises.class);
-		Objects<Jugadores> objectsJugadores = odb.getObjects(Jugadores.class);    //recuperamos todos los objetos
-		
-		
+
+		Objects<Pais> objectsPaises = odb.getObjects(Pais.class);
+		Objects<Jugador> objectsJugadores = odb.getObjects(Jugador.class); 
 		System.out.printf("%d Paises: %n", objectsPaises.size());
 		System.out.printf("%d Jugadores: %n", objectsJugadores.size());
 
 		int i = 1;
-
-		while(objectsJugadores.hasNext()) {                               // visualizar los objetos     
-			Jugadores jug = objectsJugadores.next();
+		while(objectsJugadores.hasNext()) {                      
+			Jugador jug = objectsJugadores.next();
 			System.out.printf("%d: %s %n", i++, jug.getPais());  
 		} 
-		
 		System.out.print("");
-		
-		while(objectsPaises.hasNext()) {                               // visualizar los objetos     
-			Paises pai = objectsPaises.next();
+
+		while(objectsPaises.hasNext()) {                     
+			Pais pai = objectsPaises.next();
 			System.out.printf("%d: %s %s %n", i++, pai.getId(), pai.getNombrepais());  
 		} 
-		
-		odb.close(); // Cerrar BD      
+		odb.close();      
 	}
-	}
+}
