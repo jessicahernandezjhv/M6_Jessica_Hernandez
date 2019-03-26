@@ -18,6 +18,19 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="/home/jessy/Baixades/jar_files/org.apache.servicemix.bundles.saxon-9.3.0.11_2.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/jessy/Baixades/exist-xqj-api-1.0.1/lib/exist-xqj-1.0.1.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="lib" path="/home/jessy/Baixades/mysql-connector-java-8.0.15.jar"/>
+	<classpathentry kind="lib" path="/home/jessy/Baixades/exist-xqj-api-1.0.1/lib/exist-xqj-examples.jar"/>
+	<classpathentry kind="lib" path="/home/jessy/Baixades/exist-xqj-api-1.0.1/lib/xqj2-0.0.1.jar"/>
+	<classpathentry kind="lib" path="/home/jessy/Baixades/exist-xqj-api-1.0.1/lib/xqjapi.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

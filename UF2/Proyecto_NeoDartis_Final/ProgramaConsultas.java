@@ -20,7 +20,6 @@ import org.neodatis.odb.impl.core.query.values.ValuesCriteriaQuery;
 public class ProgramaConsultas {
 	public static void main(String[] args) throws IOException, InterruptedException {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
 		String user;
 		int userOption;
 		String dataBase = "EMPRESA.DB";
@@ -46,7 +45,6 @@ public class ProgramaConsultas {
 					+ "	4. Migrar Datos\n"
 					+ "	5. Modificar Datos\n"
 					+ "	0. Salir\n");
-
 			user = reader.readLine();
 			userOption = Integer.parseInt(user);
 
@@ -105,7 +103,7 @@ public class ProgramaConsultas {
 			while (objetos.hasNext()) {
 				ObjectValues objectValues = (ObjectValues) objetos.next();
 				System.out.println("El departamento num. " + objectValues.getByAlias("dept.deptNo") + 
-						" tiene un total de " + objectValues.getByAlias("count") + " empleados.");
+						" tiene " + objectValues.getByAlias("count") + " empleados.");
 			}
 			odb.close();
 			System.exit(0);
@@ -117,9 +115,8 @@ public class ProgramaConsultas {
 		IQuery query = new CriteriaQuery(Emple.class, Where.equal("dept.deptNo",10));
 		empleList = odb.getObjects(query);
 
-
 		if (empleList != null) {
-			System.out.println("En el departamento 10 encontramos a: ");
+			System.out.println("En el departamento 10: ");
 			while (empleList.hasNext()) {
 				Emple objectValues = empleList.next();
 				System.out.println(" - " + objectValues.getApellido());
@@ -133,7 +130,7 @@ public class ProgramaConsultas {
 		Objects<Emple> empleList = null;
 		IQuery query = new CriteriaQuery(Emple.class, Where.equal("dept.dnombre","VENTAS"));
 		empleList = odb.getObjects(query);
-		System.out.print("En el departamento de VENTAS encontramos a " + empleList.size() + " trabajadores.");
+		System.out.print("En el departamento de VENTAS hay " + empleList.size() + " trabajadores.");
 		odb.close();
 		System.exit(0);
 	}
@@ -176,17 +173,13 @@ public class ProgramaConsultas {
 		}
 	}
 
-	public static void addDatos() {
-
-	}
+	public static void addDatos() {}
 
 	public static void empleadosConDirector(ODB odb) {
-
 		ICriterion criterion = Where.like("depart", "VENTAS");
 		IQuery query = new CriteriaQuery(Depart.class, criterion);
 
 		Objects<Emple> empleList = odb.getObjects(query);
-
 
 		while (empleList.hasNext()) {
 			Emple empleado = empleList.next();
