@@ -1,11 +1,13 @@
 package Bateria02_ConsultasXQuery;
 
-/* EJERCICIO 01. Descarga la API y prueba el ejemplo anterior*/
+/* EJERCICIO 3. Realiza un programa que devuelva el numero de 
+ * productos con precio mayor a 50. */
 
 import javax.xml.xquery.*;
+
 import net.xqj.exist.ExistXQDataSource;
 
-public class Ex01_Ejercicio01 {
+public class Ex03_Ejercicio03 {
 	public static void main(String[] args){
 		
 		try{
@@ -14,18 +16,18 @@ public class Ex01_Ejercicio01 {
 			server.setProperty ("port","8080");
 			server.setProperty ("user","admin");
 			server.setProperty ("password","austria");
+
 			XQConnection conn = server.getConnection();
 			XQPreparedExpression consulta;
 			XQResultSequence resultado;
 
-			consulta = conn.prepareExpression ("for $pr in doc('nueva/productos.xml')"
-					+ "/productos/produc return $pr");
+			consulta = conn.prepareExpression ("for $producto in /productos\nlet $numeroProductos := /$producto/produc[precio > 50]\n"
+					+ "return <num_productos>{count($numeroProductos)}</num_productos>");
 			resultado = consulta.executeQuery();
 
 			while (resultado.next()) {
 				System.out.println(resultado.getItemAsString(null));
 			}
-			
 			conn.close();
 
 		} catch (XQException ex) {

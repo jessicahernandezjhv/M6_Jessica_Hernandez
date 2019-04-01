@@ -32,5 +32,6 @@
 	<classpathentry kind="lib" path="/home/jessy/Baixades/exist-xqj-api-1.0.1/lib/exist-xqj-examples.jar"/>
 	<classpathentry kind="lib" path="/home/jessy/Baixades/exist-xqj-api-1.0.1/lib/xqj2-0.0.1.jar"/>
 	<classpathentry kind="lib" path="/home/jessy/Baixades/exist-xqj-api-1.0.1/lib/xqjapi.jar"/>
+	<classpathentry kind="lib" path="/home/jessy/Baixades/jar_files(1)/mongo-java-driver-3.10.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
