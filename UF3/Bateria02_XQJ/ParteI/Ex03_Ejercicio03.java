@@ -1,4 +1,4 @@
-package Bateria02_ConsultasXQuery;
+package Bateria02_XQJ.ParteI;
 
 /* EJERCICIO 3. Realiza un programa que devuelva el numero de 
  * productos con precio mayor a 50. */

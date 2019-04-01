@@ -1,4 +1,4 @@
-package Bateria02_ConsultasXQuery;
+package Bateria02_XQJ.ParteI;
 
 /* EJERCICIO 01. Descarga la API y prueba el ejemplo anterior*/
 
