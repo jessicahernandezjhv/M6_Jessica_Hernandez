@@ -1,10 +1,11 @@
 package Bateria02_XQJ.ParteI;
 
+import javax.xml.xquery.*;
+import net.xqj.exist.ExistXQDataSource;
+
 /* EJERCICIO 4. Realiza un programa que devuelva todos 
  * los empleados del departamento 10.   */
 
-import javax.xml.xquery.*;
-import net.xqj.exist.ExistXQDataSource;
 public class Ex04_Ejercicio04 {
 	public static void main(String[] args){
 		
@@ -19,8 +20,9 @@ public class Ex04_Ejercicio04 {
 			XQPreparedExpression consulta;
 			XQResultSequence resultado;
 
-			consulta = conn.prepareExpression ("for $emple in doc('nueva/empleados.xml')"
-					+ "/EMPLEADOS/EMP_ROW[DEPT_NO=10] return $emple");
+			consulta = conn.prepareExpression ("for $emp in "
+					+ "doc('nueva/empleados.xml')"
+					+ "/EMPLEADOS/EMP_ROW[DEPT_NO=10] return $emp");
 			resultado = consulta.executeQuery();
 
 			while (resultado.next()) {

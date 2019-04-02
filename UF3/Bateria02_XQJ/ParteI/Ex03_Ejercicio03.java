@@ -1,11 +1,11 @@
 package Bateria02_XQJ.ParteI;
 
+import javax.xml.xquery.*;
+import net.xqj.exist.ExistXQDataSource;
+
 /* EJERCICIO 3. Realiza un programa que devuelva el numero de 
  * productos con precio mayor a 50. */
 
-import javax.xml.xquery.*;
-
-import net.xqj.exist.ExistXQDataSource;
 
 public class Ex03_Ejercicio03 {
 	public static void main(String[] args){
@@ -21,10 +21,10 @@ public class Ex03_Ejercicio03 {
 			XQPreparedExpression consulta;
 			XQResultSequence resultado;
 
-			consulta = conn.prepareExpression ("for $producto in /productos\nlet $numeroProductos := /$producto/produc[precio > 50]\n"
-					+ "return <num_productos>{count($numeroProductos)}</num_productos>");
+			consulta = conn.prepareExpression ("for $prod in /productos\n"
+					+ "let $numProd := /$prod/produc[precio > 50]\n"
+					+ "return <num_productos>{count($numProd)}</num_productos>");
 			resultado = consulta.executeQuery();
-
 			while (resultado.next()) {
 				System.out.println(resultado.getItemAsString(null));
 			}

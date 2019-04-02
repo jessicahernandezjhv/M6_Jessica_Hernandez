@@ -1,6 +1,4 @@
-package Bateria04_ActualizacionXQuery;
-
-// EJERCICIO 1. Copia el ejemplo anterior y complétalo para que se pueda ejecutar
+package Bateria03_ActualizacionXQuery;
 
 import javax.xml.xquery.XQConnection;
 import javax.xml.xquery.XQDataSource;
@@ -9,6 +7,9 @@ import javax.xml.xquery.XQExpression;
 import javax.xml.xquery.XQPreparedExpression;
 import javax.xml.xquery.XQResultSequence;
 import net.xqj.exist.ExistXQDataSource;
+
+/* EJERCICIO 01. Copia el ejemplo anterior y complétalo para que se pueda 
+ * ejecutar */
 
 public class Ex01_Ejercicio01 {
 	public static void main(String[] args) {
@@ -25,8 +26,7 @@ public class Ex01_Ejercicio01 {
 			// Ejecutamos la expresión XQuery: actualiza el apellido del empleado con EMP_NO=7369 a 1009
 			String actual = "update value " +"/EMPLEADOS/EMP_ROW[EMP_NO=7369]/APELLIDO " +"with 'NuevoApellido'";
 			consulta.executeCommand(actual);
-			System.out.print("Datos actualizados.");
-			
+			System.out.print("Datos actualizados.");	
 		} catch (XQException e) {
 			e.printStackTrace();
 		}

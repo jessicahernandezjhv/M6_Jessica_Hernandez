@@ -1,9 +1,10 @@
 package Bateria02_XQJ.ParteI;
 
-/* EJERCICIO 01. Descarga la API y prueba el ejemplo anterior*/
-
 import javax.xml.xquery.*;
 import net.xqj.exist.ExistXQDataSource;
+
+// EJERCICIO 01. Descarga la API y prueba el ejemplo anterior
+
 
 public class Ex01_Ejercicio01 {
 	public static void main(String[] args){
