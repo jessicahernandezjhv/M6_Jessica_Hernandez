@@ -10,8 +10,10 @@ import java.util.List;
 
 import org.bson.Document;
 
+import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
+import com.mongodb.client.MongoDatabase;
 
 public class MongoDB {
     static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -47,33 +49,38 @@ public class MongoDB {
         return user;
     }
     
-    public static void optionMenu(String userInput, MongoCollection<org.bson.Document> collection) {
-    	switch(userInput.toUpperCase()) {            
-        case "A":
-            insertClothesIntoDatabase(collection);
-            break;
-        case "B":
-            printDatabase(collection);
-            break;
-        case "C":
-            printDatabaseByClothType(collection);
-            break;
-        case "D":
-            renameProduct(collection);
-            break;
-        case "E":
-            removeCloth(collection);
-            break;
-        case "F":
-            exportToTextfile(collection);
-            break;
-        case "G":
-            closeDatabase();
-            break;
-        default:
-            System.out.print("We can't read this option. Choose a valid one.");
-            break;
-        }
+    public static void optionMenu(String userInput, MongoCollection<org.bson.Document> collection) throws IOException {
+    	try {
+			switch(userInput.toUpperCase()) {            
+			case "A":
+			    insertClothesIntoDatabase(collection);
+			    break;
+			case "B":
+			    printDatabase(collection);
+			    break;
+			case "C":
+			    printDatabaseByClothType(collection);
+			    break;
+			case "D":
+			    renameProduct(collection);
+			    break;
+			case "E":
+			    removeCloth(collection);
+			    break;
+			case "F":
+			    exportToTextfile(collection);
+			    break;
+			case "G":
+			    closeDatabase();
+			    break;
+			default:
+			    System.out.print("We can't read this option. Choose a valid one.");
+			    break;
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
     
     public static void closeDatabase() {
