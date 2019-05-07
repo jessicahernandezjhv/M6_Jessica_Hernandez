@@ -14,11 +14,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/home/jessy/Baixades/neodatis-odb-1.9.30.689/neodatis-odb-1.9.30-689/neodatis-odb-1.9.30.689.jar">
-		<attributes>
-			<attribute name="module" value="true"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="lib" path="/home/jessy/Baixades/jar_files/org.apache.servicemix.bundles.saxon-9.3.0.11_2.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
@@ -34,5 +29,7 @@
 	<classpathentry kind="lib" path="/home/jessy/Baixades/exist-xqj-api-1.0.1/lib/xqj2-0.0.1.jar"/>
 	<classpathentry kind="lib" path="/home/jessy/Baixades/exist-xqj-api-1.0.1/lib/xqjapi.jar"/>
 	<classpathentry kind="lib" path="/home/jessy/Baixades/jar_files(1)/mongo-java-driver-3.10.1.jar"/>
+	<classpathentry kind="lib" path="/home/jessy/Baixades/neodatis-odb-1.9.30.689/neodatis-odb-1.9.30-689/src"/>
+	<classpathentry kind="lib" path="/home/jessy/Baixades/neodatis-odb-1.9.30.689/neodatis-odb-1.9.30-689/neodatis-odb-1.9.30.689.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
