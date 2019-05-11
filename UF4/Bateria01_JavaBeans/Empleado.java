@@ -51,7 +51,7 @@ public class Empleado implements Serializable {
 				vetoableSupport.fireVetoableChange("cargo", this.cargo, cargo);
 				this.cargo = cargo;
 			} catch (PropertyVetoException e) {
-				System.out.println("El cargo no es v√°lido");
+				System.out.println("El cargo no es v·lido");
 				e.printStackTrace();
 			}
 		}

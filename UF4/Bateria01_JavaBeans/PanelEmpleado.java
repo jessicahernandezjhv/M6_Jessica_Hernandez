@@ -27,12 +27,12 @@ public class PanelEmpleado implements Serializable, VetoableChangeListener {
 			float porcentajeVariacion = ((variacion/(float)(int)event.getOldValue()) * 100);
 			
 			if (porcentajeVariacion > this.limiteVariacionSueldo) {
-				throw new PropertyVetoException("Se ha sobrepasado la variaci√≥n de sueldo: " + this.limiteVariacionSueldo, event);
+				throw new PropertyVetoException("Se ha sobrepasado la variaciÛn de sueldo: " + this.limiteVariacionSueldo, event);
 			}
 			
 		} else if (event.getPropertyName().equals("cargo")) {
 			if (!Arrays.stream(this.listaDeCargos).anyMatch(((String)event.getNewValue())::equals)) {
-				throw new PropertyVetoException("El cargo no es v√°lido", event);
+				throw new PropertyVetoException("El cargo no es v·lido", event);
 			}
 		}
 		

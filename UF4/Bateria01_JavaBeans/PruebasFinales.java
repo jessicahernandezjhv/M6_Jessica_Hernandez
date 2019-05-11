@@ -7,16 +7,28 @@ public class PruebasFinales {
 		
 		emple.addVetoableSupport(panelEmple);
 		
-		// PRUEBAS QUE PASAN EL FILTRO
-		emple.setSueldo(900);
-		emple.setCargo("CEO");
+		// Error
+		System.out.println("Introduciendo cargo - Granjero");
+		emple.setCargo("Granjero");
+		
+		// Correcto
+		System.out.println("Introduciendo cargo - SemiSenior");
 		emple.setCargo("SemiSenior");
-
 		
-		// PRUEBAS QUE NO PASAN EL FILTRO POR EL SUELDO
-		//emple.setSueldo(-20);
-		emple.setCargo("Artista");
-		//emple.setSueldo(850);
+		// Error
+		System.out.println("Introduciendo sueldo - 1234");
+		emple.setSueldo(1234);
 		
+		// Correcto
+		System.out.println("Introduciendo sueldo - 935");
+		emple.setSueldo(935);
+		
+		// Error
+		System.out.println("Introduciendo sueldo - 500");
+		emple.setSueldo(500);
+		
+		// Correcto
+		System.out.println("Introduciendo sueldo - 899");
+		emple.setSueldo(899);
 	}
 }

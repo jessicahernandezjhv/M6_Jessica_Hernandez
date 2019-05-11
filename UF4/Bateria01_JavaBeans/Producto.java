@@ -60,10 +60,10 @@ public class Producto implements Serializable {
 		int valorAnterior = this.stockactual;
 		this.stockactual = valorNuevo;
 		
-		if (this.stockactual < getStockminimo()) // hay que realizar pedido
+		if (this.stockactual < getStockminimo())
 		{
 			propertySupport.firePropertyChange("stockactual", valorAnterior, this.stockactual);
-			this.stockactual = valorAnterior; // dejamos el stock anterior, no actualizamos
+			this.stockactual = valorAnterior;
 		}
 	}
 
