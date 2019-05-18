@@ -12,7 +12,8 @@ public class Venta implements Serializable, PropertyChangeListener {
 	int productID;
 	String comments;
 
-	public Venta() {}
+	public Venta() {
+	}
 
 	public Venta(int saleNumber, int quantity, int productID, String comments) {
 		super();
@@ -31,7 +32,6 @@ public class Venta implements Serializable, PropertyChangeListener {
 			Venta sale = ((Producto)evt.getSource()).getVenta();
 			sale.setComments("Pendiente de pedido por falta de stock");
 			dataBase.updateSale(sale);
-
 			dataBase.closeDatabase();
 		}
 	}
