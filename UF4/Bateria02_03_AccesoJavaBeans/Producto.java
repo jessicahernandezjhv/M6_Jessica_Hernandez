@@ -11,6 +11,7 @@ public class Producto implements Serializable {
 	private int stockactual;
 	private int stockminimo;
 	private float pvp;
+	private Venta venta;
 	
 	private PropertyChangeSupport propertySupport;
 	
@@ -59,8 +60,29 @@ public class Producto implements Serializable {
 		int valorAnterior = this.stockactual;
 		this.stockactual = valorNuevo;
 		
-		if (this.stockactual < getStockminimo()) // hay que realizar pedido
-		{
+		if (this.stockactual < getStockminimo()) {
+			propertySupport.firePropertyChange("stockactual", valorAnterior, this.stockactual);
+			this.stockactual = valorAnterior;
+		}
+	}
+	
+	public void setVenta(Venta venta) {
+		this.venta = venta;
+	}
+	
+	public Venta getVenta() {
+		return this.venta;
+	}
+	
+	public void realizarVenta(int cantidad) {
+		int valorAnterior = this.stockactual;
+		this.stockactual -= cantidad;
+		
+		BaseDatos db = new BaseDatos();
+		this.venta = db.insertSale(this.idproducto, cantidad);
+		db.closeDatabase();
+		
+		if (this.stockactual < getStockminimo()) { // hay que realizar pedido
 			propertySupport.firePropertyChange("stockactual", valorAnterior, this.stockactual);
 			this.stockactual = valorAnterior; // dejamos el stock anterior, no actualizamos
 		}
@@ -89,5 +111,9 @@ public class Producto implements Serializable {
 	public void setPropertySupport(PropertyChangeSupport propertySupport) {
 		this.propertySupport = propertySupport;
 	}
-
+	
+	public String toString() {
+		return this.descripcion;
+	}
 }
+

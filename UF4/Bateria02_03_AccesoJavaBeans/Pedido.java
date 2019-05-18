@@ -3,7 +3,8 @@ import java.beans.*;
 import java.io.Serializable;
 import java.util.Date;
 @SuppressWarnings("serial")
-public class Pedido implements Serializable, PropertyChangeListener {     
+public class Pedido implements Serializable, PropertyChangeListener {   
+	
     private int numeroPedido;
     private Producto producto;
     private Date fecha;
@@ -18,9 +19,9 @@ public class Pedido implements Serializable, PropertyChangeListener {
    
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-    	System.out.printf("stock anterior: %d%n",evt.getOldValue());
-    	System.out.printf("stock actual: %d%n",evt.getNewValue());
-    	System.out.printf("REALIZAR PEDIDO EN PRODUCTO: %s%n",producto.getDescripcion());
+    	System.out.printf("Stock Anterior: %d%n",evt.getOldValue());
+    	System.out.printf("Stock Actual: %d%n",evt.getNewValue());
+    	System.out.printf("Hacer pedido del producto: %s%n",producto.getDescripcion());
      }
 	public int getNumeroPedido() {
 		return numeroPedido;
@@ -46,5 +47,4 @@ public class Pedido implements Serializable, PropertyChangeListener {
 	public void setCantidad(int cantidad) {
 		this.cantidad = cantidad;
 	}
-	
 }
